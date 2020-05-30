@@ -1,0 +1,147 @@
+public static void main(String[]args){
+        Scanner leia = new Scanner(System.in); // 
+        Random gerador = new Random(); // 
+        //DECLARANDO E INICIANDO VARIÁVEIS
+        String nomepersonagem = ""; // nome do personagem
+        int opcao=0; // ESCOLHA DE POKEMON
+        int batalha=0; // OPÇÕES DE BATALHA
+        int adversario = 100;// VIDA DO POKEMON ADVERSÁRIO
+        int vida [] = new int[1]; // 
+        int vidapokemoninicial = 100;// vidapokemon inicial
+        System.out.println("==============================");
+        System.out.println("==============================");
+        System.out.println("       POKÉMON FACENS         ");
+        System.out.println("==============================");
+        System.out.println("==============================\n \n");
+        System.out.println("VOCÊ ACABOU DE ENTRAR NO UNIVERSO POKEMON\nSEU OBJETIVO É GANHAR ESSA LUTA PARA DERROTAR O LÍDER DA LIGA DOS QUATRO");
+        // LER NOME DO PERSONAGEM
+        System.out.print("NOME DO AVENTUREIRO : ");
+        nomepersonagem = leia.next();
+        // ESCOLHENDO POKEMON
+        System.out.println(" ===== BEM VINDO - "+nomepersonagem+" =====\nESCOLHA SEU POKEMON \n 1 - CHARIZARD\n 2 - GENGAR\n 3 - MAGIKARP");
+        System.out.print("EU ESCOLHO ");
+        opcao = leia.nextInt();
+        switch(opcao){
+            case 1 : System.out.println("CHARIZRD!!!");
+            System.out.println("VOCÊ ACABA DE ENTRAR PARA A BATALHA E O LIDER DO GINÁRIO ENVIA GYARARDOS\n GYARARDOS TEM 100 DE VIDA\n");
+            //BATALHANDO, ESCOLHENDO ATAQUE, ATRIBUINDO E ARMAZENANDO VALORES DE DANO E VIDA
+                do{
+                System.out.println("=====================\n  ESCOLHA O ATAQUE\n=====================\n | 1 - LANÇA CHAMAS (dano 0 - 20 ) | \n | 2 - GARRA DO DRAGÃO (dano 5 - 35) |\n | 3 - ASAS DE FERRO ( dano 35 - 60)|");
+                batalha = leia.nextInt();
+               
+                    switch (batalha){
+                        case 1 : 
+                            // NÚMERO ALEATÓRIO VARIANDO DE ACORDO COM O DANO DO ATAQUE E ARMAZENANDO AO VETOR PARA SUBTRAIR A VIDA DO POKEMON INIMIGO
+                            vida[0]=gerador.nextInt(19)+1;
+                            System.out.println("CHARIZARD USOU LANÇA CHAMAS E CAUSOU "+vida[0]+" DE DANO\n");
+                            adversario-=vida[0];
+                            System.out.printf("GYARARDOS FICOU COM %d DE VIDA\n",adversario);
+                            // NÚMERO ALEATÓRIO VARIANDO DE ACORDO COM O DANO DO ATAQUE E ARMAZENANDO AO VETOR PARA SUBTRAIR A VIDA DO POKEMON ALIADO
+                                 vida[1]=gerador.nextInt(70);
+                                 vidapokemoninicial-=vida[1];
+                            System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                        break;
+                        case 2 :
+                            vida[0]=gerador.nextInt(30)+5;
+                        System.out.println("CHARIZARD USOU GARRA DO DRAGÃO E CAUSOU "+vida[0]+" DE DANO\n");
+                            adversario-=vida[0];
+                            System.out.printf("GYARARDOS FICOU COM %d DE VIDA\n",adversario);
+                                vida[1]=gerador.nextInt(70);
+                                vidapokemoninicial-=vida[1];
+                            System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                        break;
+                        case 3 :
+                            vida[0]=gerador.nextInt(25)+35;
+                        System.out.println("CHARIZARD USOU ASAS DE FERRO E CAUSOU "+vida[0]+" DE DANO\n");
+                            adversario-=vida[0];
+                            System.out.printf("GYARARDOS FICOU COM %d DE VIDA\n",adversario);
+                                vida[1]=gerador.nextInt(70);
+                                vidapokemoninicial-=vida[1];
+                            System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                            break;     
+                        default:
+                               System.out.println ("NÃO TEM COMO CORRER DA BATALHA");  
+                    }
+                    
+                }while(adversario>0 && vidapokemoninicial >0);
+                if(adversario < 0){
+                    System.out.println("=============================================\n                 PARABÉNS\n VOCÊ DERROTOU O LIDER DA EQUIPE DOS QUATRO\n=============================================\n");
+                }else{
+                    System.out.println("==============================\n SEU POKEMON DESMAIOU\n VOCÊ PERDEU A BATALHA\n==============================\n");
+                }
+                break;
+            case 2:
+                System.out.println("GENGAR!!!");
+            System.out.println("VOCÊ ACABA DE ENTRAR PARA A BATALHA E O LIDER DO GINÁRIO ENVIA GYARARDOS\n GYARARDOS TEM 100 DE VIDA\n");
+                do{
+                System.out.println("=====================\n  ESCOLHA O ATAQUE\n=====================\n | 1 - BOLA SOMBRIA (dano 20 - 45 ) | \n | 2 - SOCO DE GELO (dano 10 - 70)  |\n | 3 - PSYQUICO ( dano 0 - 50)      |");
+                batalha = leia.nextInt();
+               
+                    switch (batalha){
+                        case 1 : 
+                            vida[0]=gerador.nextInt(25)+20;
+                            System.out.println("GENGAR USOU BOLA SOMBRIA E CAUSOU "+vida[0]+" DE DANO\n");
+                            adversario-=vida[0];
+                            System.out.printf("GYARARDOS FICOU COM %d DE VIDA\n",adversario);
+                                 vida[1]=gerador.nextInt(70);
+                                 vidapokemoninicial-=vida[1];
+                            System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                        break;
+                        case 2 :
+                            vida[0]=gerador.nextInt(60)+10;
+                        System.out.println("GENGAR USOU SOCO DE GELO E CAUSOU "+vida[0]+" DE DANO\n");
+                            adversario-=vida[0];
+                            System.out.printf("GYARARDOS FICOU COM %d DE VIDA\n",adversario);
+                                vida[1]=gerador.nextInt(70);
+                                vidapokemoninicial-=vida[1];
+                            System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                        break;
+                        case 3 :
+                            vida[0]=gerador.nextInt(50);
+                        System.out.println("GENGAR USOU PSYQUICO E CAUSOU "+vida[0]+" DE DANO\n");
+                            adversario-=vida[0];
+                            System.out.printf("GYARARDOS FICOU COM %d DE VIDA\n",adversario);
+                                vida[1]=gerador.nextInt(70);
+                                vidapokemoninicial-=vida[1];
+                            System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                            break;     
+                        default:
+                               System.out.println ("NÃO TEM COMO CORRER DA BATALHA");  
+                    }
+                    
+                }while(adversario>0 && vidapokemoninicial >0);
+                if(adversario < 0){
+                    System.out.println("=============================================\n                 PARABÉNS\n VOCÊ DERROTOU O LIDER DA EQUIPE DOS QUATRO\n=============================================\n");
+                }else{
+                    System.out.println("==============================\n SEU POKEMON DESMAIOU\n VOCÊ PERDEU A BATALHA\n==============================\n");
+                }
+                break;
+            case 3 : 
+                System.out.println("MAGIKARP!!");
+                do{
+                System.out.println("=====================\n  ESCOLHA O ATAQUE\n=====================\n | 1 - SPLASH |");
+                batalha = leia.nextInt();
+                    switch(batalha){
+                        case 1 : System.out.println("MAGIGARK USOU SPLASH\n NÃO TEVE EFEITO");
+                        vida[1]=gerador.nextInt(70);
+                        vidapokemoninicial-=vida[1];
+                        System.out.println("----- VEZ DO LIDER ATACAR -----!\nGYARARDOS ATACOU E CAUSOU "+vida[1]+ " DE DANO\n");
+                            System.out.printf("SEU POKEMON FICOU COM %d DE VIDA\n",vidapokemoninicial);
+                            break;  
+                        
+                    }
+                }while(adversario>0 && vidapokemoninicial >0);
+                if(vidapokemoninicial < 0){
+                 
+                    System.out.println("==============================\n SEU POKEMON DESMAIOU\n VOCÊ PERDEU A BATALHA\n==============================\n");
+                }
+        }
+    }
+}
+                
